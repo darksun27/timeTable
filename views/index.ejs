@@ -1,3 +1,29 @@
+<style>
+    .classItem{
+        border: 2px solid gray;
+        border-radius: 30px;
+        width: 200px;
+        padding: 20px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .timeTableZone{
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+    }
+    h1,form{
+        margin: auto;
+        margin-bottom: 30px;
+        width: 200px;
+        text-align: center;
+    }
+    @media(max-width: 450px){
+        .timeTableZone{
+            display: block
+        }
+    }
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <h1>Time Table</h1>
 <form>
@@ -36,7 +62,6 @@
                                                                                         <h5>Subject : ${cl.subject}</h5>
                                                                                         <h5>Time    : ${cl.start}</h5>
                                                                                         <h5>Venue   : ${cl.venue}</h5>
-                                                                                        <hr>
                                                                                     </div>`;
                         }
                     })

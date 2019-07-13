@@ -12,8 +12,6 @@ app.get("/", (req, res)=>{
 })
 
 app.post("/fetchData",(req,res)=>{
-    console.log("Ajax call");
-    console.log(req.body.day);
     res.send({classes : data.classes[req.body.day]});
 })
 
