@@ -11,6 +11,12 @@ app.get("/", (req, res)=>{
     res.render("index");
 })
 
+app.get("/api/data", (req, res)=>{
+    res.status(200);
+    res.json(data.classes);
+    res.end();
+})
+
 app.post("/fetchData",(req,res)=>{
     console.log("Ajax call");
     console.log(req.body.day);
