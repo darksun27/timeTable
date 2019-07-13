@@ -110,5 +110,6 @@ function pushDataToArray(day, type, subject, venue, teachers, time){
 }
 
 module.exports = {
-    sortedClass
+    sortedClass,
+    classes
 }
