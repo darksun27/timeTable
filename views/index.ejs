@@ -1,0 +1,47 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<h1>Time Table</h1>
+<form>
+    <select name="day" id = "day">
+        <option value="MON">Monday</option>
+        <option value="TUES">Tuesday</option>
+        <option value="WED">Wednesday</option>
+        <option value="THUR">Thursday</option>
+        <option value="FRI">Friday</option>
+        <option value="SAT">Saturday</option>
+    </select>
+    <input type="button" value="Fetch" id="fetch">
+</form>
+<div class = "timeTableZone">
+</div>
+<script>
+    function changeTimeTable(classes){    
+    }
+    $(document).ready(function(){
+        //changeTimeTable()
+        $('#fetch').on('click',function(event){
+            var day = $('#day').val();
+            console.log(day);
+            req = $.ajax({
+                url : '/fetchData',
+                type:'POST',
+                data:{day : day} 
+            }).done(function(classesToday){
+                document.querySelector('.timeTableZone').innerHTML = "";
+                var timeSlots = [9,10,11,12,1,2,3,4];
+                timeSlots.forEach(function(timeslot){
+                    classesToday.classes.forEach(function(cl){
+                        if(timeslot == cl.start){
+                            document.querySelector('.timeTableZone').innerHTML += `<div class="classItem">
+                                                                                        <h5>${cl.type}</h5>
+                                                                                        <h5>Subject : ${cl.subject}</h5>
+                                                                                        <h5>Time    : ${cl.start}</h5>
+                                                                                        <h5>Venue   : ${cl.venue}</h5>
+                                                                                        <hr>
+                                                                                    </div>`;
+                        }
+                    })
+                })
+            })
+        })
+    })
+</script>
