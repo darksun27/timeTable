@@ -17,6 +17,6 @@ app.post("/fetchData",(req,res)=>{
     res.send({classes : data.classes[req.body.day]});
 })
 
-app.listen(3000,"localhost",function(){
+app.listen(process.env.PORT,"localhost",function(){
     console.log("Server Started");
 })
