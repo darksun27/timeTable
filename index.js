@@ -13,7 +13,7 @@ app.get("/", (req, res)=>{
 
 app.get("/api/data", (req, res)=>{
     res.status(200);
-    res.json(data.classes);
+    res.json(data.sortedClass);
     res.end();
 })
 

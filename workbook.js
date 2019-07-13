@@ -62,6 +62,28 @@ keys.forEach(key => {
         
     }
 })
+
+//Sorting According to time
+const sortedClass = {
+    'MON' :[],
+    'TUES':[],
+    'WED' :[],
+    'THUR':[],
+    'FRI' :[],
+    'SAT' :[]
+};
+var timeSlots = [9,10,11,12,1,2,3,4];
+Object.keys(classes).forEach((day)=>{
+    timeSlots.forEach((timeslot)=>{
+        classes[day].forEach((classItem)=>{
+            if(timeslot == classItem.start){
+                console.log(classItem);
+                sortedClass[day].push(classItem);
+            }
+        })
+    })
+})
+
 //Dumping Results into File
 console.log("Writing Time Table to File: ",outputFile);
 var response = JSON.stringify(classes);
