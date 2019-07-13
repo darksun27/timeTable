@@ -11,10 +11,16 @@ app.get("/", (req, res)=>{
     res.render("index");
 })
 
+app.get("/api/data", (req, res)=>{
+    res.status(200);
+    res.json(data.classes);
+    res.end();
+})
+
 app.post("/fetchData",(req,res)=>{
     res.send({classes : data.classes[req.body.day]});
 })
 
-app.listen(3000,"localhost",function(){
+app.listen(process.env.PORT,function(){
     console.log("Server Started");
 })
