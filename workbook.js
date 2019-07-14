@@ -77,7 +77,6 @@ Object.keys(classes).forEach((day)=>{
     timeSlots.forEach((timeslot)=>{
         classes[day].forEach((classItem)=>{
             if(timeslot == classItem.start){
-                console.log(classItem);
                 sortedClass[day].push(classItem);
             }
         })
@@ -86,8 +85,6 @@ Object.keys(classes).forEach((day)=>{
 
 //Dumping Results into File
 console.log("Writing Time Table to File: ",outputFile);
-var response = JSON.stringify(classes);
-console.log(classes);
 
 //Functions
 function getDayValue(row){
