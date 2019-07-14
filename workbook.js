@@ -87,6 +87,7 @@ Object.keys(classes).forEach((day)=>{
 //Dumping Results into File
 console.log("Writing Time Table to File: ",outputFile);
 var response = JSON.stringify(classes);
+console.log(classes);
 
 //Functions
 function getDayValue(row){
@@ -103,6 +104,7 @@ function pushDataToArray(day, type, subject, venue, teachers, time){
         day      :days[day],
         type     :classType[type],
         start    :time,
+        time24   :parseInt(time) < 5 ? parseInt(time) + 12 : parseInt(time),
         subject  :subject,
         venue    :venue,
         teachers :teachers.split(",")
