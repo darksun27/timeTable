@@ -87,7 +87,7 @@ Object.keys(classes).forEach((day)=>{
 console.log("Writing Time Table to File: ",outputFile);
 
 //Functions
-function getDayValue(row){
+getDayValue(row){
     try{
         return sheet['A'+row].v;
     } catch{
