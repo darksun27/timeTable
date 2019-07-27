@@ -85,7 +85,6 @@ Object.keys(classes).forEach((day)=>{
 
 //Dumping Results into File
 console.log("Writing Time Table to File: ",outputFile);
-console.log(sortedClass);
 
 //Functions
 function getDayValue(row){
