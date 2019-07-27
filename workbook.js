@@ -18,8 +18,8 @@ const days        = {
     'SAT' : 'Saturday'
 }
 const mySubjects  = {
-    'HS434'   : 'Principles of Management',
-    '17MA531' : 'Basic Numerical Methods',
+    'HS532'   : 'Planning and Economic Development',
+    '16MA731' : 'Theory of Numbers',
     'CI511'   : 'Computer Networks',
     'CI514'   : 'Artificial Intelligence',
     'CI571'   : 'Computer Networks Lab',
@@ -49,7 +49,7 @@ keys.forEach(key => {
     var column        = key[0];
     var row     = key.slice(1);
     var value      = sheet[key].v;
-    var myClass    = /([LPT])(.*[B][C]*)(([1])([,-]([1]*)+[0-9]*))*(.[C].*)*([(])/g.exec(value);
+    var myClass    = /([LPT])(.*[B][C]*)(.*[1][4].*)*(.[C].*)*([(])/g.exec(value);
     var whichClass = /([(]).*([)])/g.exec(value);
     var whereClass = /([-]).*([/])/g.exec(value);
     var teachers   = /([/]).*/g.exec(value);
