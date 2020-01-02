@@ -18,10 +18,10 @@ const days        = {
     'SAT' : 'Saturday'
 }
 const mySubjects  = {
-    '20B16CS323'   : 'Problem Solving using C and C++',
+    '20B16CS323'   : 'Problem Solving',
     'CS312' : 'Blockchain technology',
     'CI635'   : 'Data and Web Mining',
-    'CI611'   : 'Theory Of Computation And Compiler Design',
+    'CI611'   : 'Compiler Design',
     'MA633'   : 'Statistics',
     'HS632'   : 'Project Management',
     'CI671'   : 'Compiler Design Lab',
