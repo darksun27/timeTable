@@ -18,14 +18,13 @@ const days        = {
     'SAT' : 'Saturday'
 }
 const mySubjects  = {
-    'HS532'   : 'Planning and Economic Development',
-    '16MA731' : 'Theory of Numbers',
-    'CI511'   : 'Computer Networks',
-    'CI514'   : 'Artificial Intelligence',
-    'CI571'   : 'Computer Networks Lab',
-    'CI574'   : 'Artificial Intelligence Lab',
-    'CI575'   : 'Open Source Lab',
-    'CI576'   : 'Information Security Lab'
+    '20B16CS323'   : 'Problem Solving using C and C++',
+    'CS312' : 'Blockchain technology',
+    'CI635'   : 'Data and Web Mining',
+    'CI611'   : 'Theory Of Computation And Compiler Design',
+    'MA633'   : 'Statistics',
+    'HS632'   : 'Project Management',
+    'CI671'   : 'Compiler Design Lab',
 }
 const classes     = {
     'MON' :[],
@@ -44,7 +43,7 @@ var sheetName    = workbook.SheetNames[0];
 var sheet        = workbook.Sheets[sheetName];
 
 var keys = Object.keys(sheet).filter(key => key.match(/[A-Z][0-9]+/g));
-
+var temp = {}
 keys.forEach(key => {
     var column        = key[0];
     var row     = key.slice(1);
@@ -56,13 +55,20 @@ keys.forEach(key => {
     if(myClass){
         var subjectCode = whichClass[0].substring(1,whichClass[0].length-1)
         if(whichClass && mySubjects[subjectCode]){
+            console.log(myClass[0])
             var day = getDayValue(row);
+            // if (temp[mySubjects[subjectCode]]){
+            //     temp[mySubjects[subjectCode]]++
+            // }
+            // else{
+            //     temp[mySubjects[subjectCode]] = 1
+            // } 
+            console.log(day, myClass[1], mySubjects[subjectCode], whereClass, sheet[column+'2'].v.split(" ")[0].split("-")[0])
             pushDataToArray(day, myClass[1], mySubjects[subjectCode], whereClass, teachers[0].substring(1,teachers[0].length-1), sheet[column+'2'].v.split(" ")[0].split("-")[0]);
         }
-        
     }
 })
-
+console.log(temp)
 //Sorting According to time
 const sortedClass = {
     'MON' :[],
