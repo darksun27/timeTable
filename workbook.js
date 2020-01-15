@@ -23,7 +23,7 @@ const mySubjects  = {
     'CI635'   : 'Data and Web Mining',
     'CI611'   : 'Compiler Design',
     'MA633'   : 'Statistics',
-    'HS632'   : 'Project Management',
+    'HS631'   : 'Project Management',
     'CI671'   : 'Compiler Design Lab',
 }
 const classes     = {
